@@ -27,7 +27,7 @@ function __autoload($classname)
 | path to your installation.
 |
 */
-$config['base_url']	= '';
+$config['base_url']	= 'http://test-ci.ru/';
 
 /*
 |--------------------------------------------------------------------------
@@ -39,7 +39,7 @@ $config['base_url']	= '';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------

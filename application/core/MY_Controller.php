@@ -14,4 +14,4 @@ class MY_Controller extends CI_Controller {
         $this->data['error'] = array();
         $this->data['site_name'] = config_item('site_name');
     }
-} 
+}
