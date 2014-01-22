@@ -23,6 +23,34 @@ class User_M extends MY_Model {
         )
     );
 
+    public $rules_admin = array(
+        'name' => array(
+            'field' => 'name',
+            'label' => 'Name',
+            'rules' => 'trim|required|xss_clean'
+        ),
+        'order' => array(
+            'field' => 'order',
+            'label' => 'Order',
+            'rules' => 'trim|is_natural'
+        ),
+        'email' => array(
+            'field' => 'email',
+            'label' => 'Email',
+            'rules' => 'trim|required|valid_email|callback__unique_email|xss_clean'
+        ),
+        'password' => array(
+            'field' => 'password',
+            'label' => 'Password',
+            'rules' => 'trim|matches[password_confirm]' // убрали requiered чтобы можно было оставить пароль пустым при обновлении
+        ),
+        'password_confirm' => array(
+            'field' => 'password_confirm',
+            'label' => 'Password confirm',
+            'rules' => 'trim|matches[password]'
+        )
+    );
+
     public function __construct()
     {
         parent::__construct();
